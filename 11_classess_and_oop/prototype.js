@@ -24,22 +24,45 @@ Array.prototype.heyRitam = function(){
 
 // heropoer.ritam()
 
-myHeros.ritam()
-myHeros.heyRitam()
+// myHeros.ritam()
+// myHeros.heyRitam()
 
 // heropower.heyRitam()
 
 // inheritance
 
+const User = {
+    name: "chai",
+    emial: "chai@google.com"
+}
+
 const Teacher = {
     makeVideo: true
 }
 
-const TrachingSupport = {
+const TeachingSupport = {
     isAvailable: false
 }
 
 const TASupport = {
     makeAssignment: 'JS assignment',
-    fullTime: true
+    fullTime: true,
+    __proto__: TeachingSupport
 }
+
+Teacher.__proto__ = User;
+
+// mordern syntex
+
+Object.setPrototypeOf(TeachingSupport, Teacher)
+
+let anotherUsername = "ChaiAur Code "
+
+String.prototype.trueLength = function(){
+    console.log(`${this}`);
+    console.log(`Trure length is: ${this.trim().length}`);
+}
+
+anotherUsername.trueLength()
+"ritam".trueLength()
+"icetea".trueLength()
